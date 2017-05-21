@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E4A0812-89C9-42A0-900D-EC0276DCB2CB}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC2BuildOrder</RootNamespace>
+    <AssemblyName>SC2BuildOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SC2BuildOrder.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SC2BuildOrder.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls">
+      <HintPath>Extensions\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Controls.Toolkit">
+      <HintPath>Extensions\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Site.Controls">
+      <HintPath>Extensions\Coding4Fun.Phone.Site.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllBuild.xaml.cs">
+      <DependentUpon>AllBuild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuildOrder.xaml.cs">
+      <DependentUpon>BuildOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuiltInOrder.xaml.cs">
+      <DependentUpon>BuiltInOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComingSoon.xaml.cs">
+      <DependentUpon>ComingSoon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CounterUnits.xaml.cs">
+      <DependentUpon>CounterUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Build_Order.cs" />
+    <Compile Include="Database\Data_Context.cs" />
+    <Compile Include="Database\DB_Helper.cs" />
+    <Compile Include="Database\Index.cs" />
+    <Compile Include="Database\Object.cs" />
+    <Compile Include="InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Create.xaml.cs">
+      <DependentUpon>Create.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AllBuild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuildOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuiltInOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ComingSoon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CounterUnits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Create.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppHub\AppHub Description.txt" />
+    <None Include="AppHub\Artwork\1000-sc2.png" />
+    <None Include="AppHub\Artwork\173-sc2.png" />
+    <None Include="AppHub\Artwork\200-sc2.png" />
+    <None Include="AppHub\Artwork\62-sc2.png" />
+    <None Include="AppHub\Artwork\99-sc2.png" />
+    <None Include="AppHub\Artwork\sc2.jpg" />
+    <Resource Include="ApplicationIcon.png" />
+    <Content Include="ApplicationIcon1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Background.png" />
+    <Content Include="Background1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="PanoramaBackground.png" />
+    <Resource Include="Images\Backgrounds\Misc\bg-battlenet.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\bg-installation.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\bg-intro-sc2.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\bg-races.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\body-bg-baked.jpg" />
+    <Content Include="Images\Backgrounds\bg_current_build_panel.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\content-bot.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\overview.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\Protoss_header.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\section-bg.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\section-header-small.gif" />
+    <Resource Include="Images\Backgrounds\Misc\section-header.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\Terran_header.jpg" />
+    <Resource Include="Images\Backgrounds\Misc\Zerg_header.jpg" />
+    <Resource Include="Images\Application Bar\appbar.addcomment.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.addnotes.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.addpicture.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.at.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.attach.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.cellphone.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.edittest.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.favs.removefrom.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.format.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.gotoaddressbar.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.gotodate.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.gotoslide.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.goup.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.heart.broken.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.heart.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.heart2.broken.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.heart2.empty.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.heart2.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.lamp.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.linkto.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.linkto.withlinks.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.lock.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.manage.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.map.direction.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.map.poi.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.map.position.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.mic.mute.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.mic.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.money.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.movetofolder.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.numberlist.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.people.1.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.people.2.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.phone.asterisk.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.phone.numbersign.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.phone.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.phonebook.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.phonekeys.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.autoflash.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.flash.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.iris.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.light.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.noflash.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.nolight.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.photo.redeye.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.pin.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.plane.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.replymeetingrequest.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.repond.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.send.photo.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.send.text.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.sendmessage.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.sendpoi.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.2.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.3.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.4.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.5.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.6.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.tabs.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.time.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.transport.repeat.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.transport.repeatone.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.transport.shuffle.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.voicemail.rest.png" />
+    <Resource Include="Images\Application Bar\appbar.add.png" />
+    <Resource Include="Images\Application Bar\appbar.addto.png" />
+    <Resource Include="Images\Application Bar\appbar.cancel.png" />
+    <Resource Include="Images\Application Bar\appbar.check.png" />
+    <Resource Include="Images\Application Bar\appbar.delete.png" />
+    <Resource Include="Images\Application Bar\appbar.directions.png" />
+    <Resource Include="Images\Application Bar\appbar.edit.png" />
+    <Resource Include="Images\Application Bar\appbar.email.png" />
+    <Resource Include="Images\Application Bar\appbar.favorites.png" />
+    <Resource Include="Images\Application Bar\appbar.location.png" />
+    <Resource Include="Images\Application Bar\appbar.mode.png" />
+    <Resource Include="Images\Application Bar\appbar.pushpinhouse.png" />
+    <Resource Include="Images\Application Bar\appbar.refresh.png" />
+    <Resource Include="Images\Application Bar\appbar.save.png" />
+    <Resource Include="Images\Application Bar\appbar.search.png" />
+    <Resource Include="Images\Application Bar\appbar.sendmessage.png" />
+    <Resource Include="Images\Application Bar\appbar.sendtext.png" />
+    <Resource Include="Images\Application Bar\appbar.settings.png" />
+    <Resource Include="Images\Application Bar\appbar.startstop.png" />
+    <Resource Include="Images\Application Bar\appbar.zoomin.png" />
+    <Resource Include="Images\Application Bar\appbar.zoomout.png" />
+    <Content Include="Extensions\Coding4Fun.Phone.Controls.dll" />
+    <Content Include="Extensions\Coding4Fun.Phone.Controls.Toolkit.dll" />
+    <Content Include="Extensions\Coding4Fun.Phone.Site.Controls.dll" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\Backgrounds\bg-mutalisk-top.jpg" />
+    <Content Include="Images\Backgrounds\bg-mothership-top.jpg" />
+    <Content Include="Images\Backgrounds\bg-siege-tank-top.jpg" />
+    <Content Include="Images\Backgrounds\bg1.jpg" />
+    <Content Include="Images\Backgrounds\bg10.jpg" />
+    <Content Include="Images\Backgrounds\bg11.jpg" />
+    <Content Include="Images\Backgrounds\bg12.jpg" />
+    <Content Include="Images\Backgrounds\bg14.jpg" />
+    <Content Include="Images\Backgrounds\bg15.jpg" />
+    <Content Include="Images\Backgrounds\bg16.jpg" />
+    <Content Include="Images\Backgrounds\bg17.jpg" />
+    <Content Include="Images\Backgrounds\bg18.jpg" />
+    <Content Include="Images\Backgrounds\bg19.jpg" />
+    <Content Include="Images\Backgrounds\bg2.jpg" />
+    <Content Include="Images\Backgrounds\bg20.jpg" />
+    <Content Include="Images\Backgrounds\bg21.jpg" />
+    <Content Include="Images\Backgrounds\bg22.jpg" />
+    <Content Include="Images\Backgrounds\bg23.jpg" />
+    <Content Include="Images\Backgrounds\bg24.jpg" />
+    <Content Include="Images\Backgrounds\bg25.jpg" />
+    <Content Include="Images\Backgrounds\bg26.jpg" />
+    <Content Include="Images\Backgrounds\bg27.jpg" />
+    <Content Include="Images\Backgrounds\bg28.jpg" />
+    <Content Include="Images\Backgrounds\bg29.jpg" />
+    <Content Include="Images\Backgrounds\bg3.jpg" />
+    <Content Include="Images\Backgrounds\bg30.jpg" />
+    <Content Include="Images\Backgrounds\bg31.jpg" />
+    <Content Include="Images\Backgrounds\bg32.jpg" />
+    <Content Include="Images\Backgrounds\bg33.jpg" />
+    <Content Include="Images\Backgrounds\bg34.jpg" />
+    <Content Include="Images\Backgrounds\bg35.jpg" />
+    <Content Include="Images\Backgrounds\bg36.jpg" />
+    <Content Include="Images\Backgrounds\bg37.jpg" />
+    <Content Include="Images\Backgrounds\bg38.jpg" />
+    <Content Include="Images\Backgrounds\bg39.jpg" />
+    <Content Include="Images\Backgrounds\bg4.jpg" />
+    <Content Include="Images\Backgrounds\bg40.jpg" />
+    <Content Include="Images\Backgrounds\bg41.jpg" />
+    <Content Include="Images\Backgrounds\bg42.jpg" />
+    <Content Include="Images\Backgrounds\bg43.jpg" />
+    <Content Include="Images\Backgrounds\bg44.jpg" />
+    <Content Include="Images\Backgrounds\bg46.jpg" />
+    <Content Include="Images\Backgrounds\bg47.jpg" />
+    <Content Include="Images\Backgrounds\bg48.jpg" />
+    <Content Include="Images\Backgrounds\bg45.jpg" />
+    <Content Include="Images\Backgrounds\bg5.jpg" />
+    <Content Include="Images\Backgrounds\bg13.jpg" />
+    <Content Include="Images\Backgrounds\bg6.jpg" />
+    <Resource Include="Images\Backgrounds\sc2bg.png" />
+    <Content Include="Images\Backgrounds\bg7.jpg" />
+    <Content Include="Images\Backgrounds\bg8.jpg" />
+    <Content Include="Images\Backgrounds\bg9.jpg" />
+    <Content Include="Images\Backgrounds\bg_current_panel.png" />
+    <Content Include="Images\Backgrounds\bg_translucent.png" />
+    <Resource Include="Images\Icons\bg-section-title-whatssc2.png" />
+    <Resource Include="Images\Icons\blizz-sc2.png" />
+    <Resource Include="Images\Icons\blizzard.png" />
+    <Resource Include="Images\Icons\bnet-feature-cloud.png" />
+    <Resource Include="Images\Icons\bnet-feature-comp.png" />
+    <Resource Include="Images\Icons\bnet-feature-maps.png" />
+    <Resource Include="Images\Icons\bnet-feature-mm.png" />
+    <Resource Include="Images\Icons\bnet-feature-profiles.png" />
+    <Resource Include="Images\Icons\footer.png" />
+    <Resource Include="Images\Icons\icon-bnet.png" />
+    <Resource Include="Images\Icons\icon-buildtime-protoss-tooltip.png" />
+    <Resource Include="Images\Icons\icon-buildtime-terran-tooltip.png" />
+    <Resource Include="Images\Icons\icon-buildtime-zerg-tooltip.png" />
+    <Resource Include="Images\Icons\icon-buildtime-zerg.png" />
+    <Resource Include="Images\Icons\icon-install.png" />
+    <Resource Include="Images\Icons\icon-manual.png" />
+    <Resource Include="Images\Icons\icon-mineral-tooltip.png" />
+    <Resource Include="Images\Icons\icon-raynor.png" />
+    <Resource Include="Images\Icons\icon-supply-protoss.png" />
+    <Resource Include="Images\Icons\icon-supply-zerg.png" />
+    <Resource Include="Images\Icons\icon-title-unit-statistics.png" />
+    <Resource Include="Images\Icons\icon-vespene-protoss-tooltip.png" />
+    <Resource Include="Images\Icons\icon-vespene-protoss.png" />
+    <Resource Include="Images\Icons\icon-vespene-terran-tooltip.png" />
+    <Resource Include="Images\Icons\icon-vespene-zerg-tooltip.png" />
+    <Resource Include="Images\Icons\icon-vespene-zerg.png" />
+    <Resource Include="Images\Icons\pnav-arrow-left.png" />
+    <Resource Include="Images\Icons\pnav-arrow-right.png" />
+    <Resource Include="Images\Icons\Protoss.png" />
+    <Resource Include="Images\Icons\btn_next.png" />
+    <Resource Include="Images\Backgrounds\Misc\frame-screenshot-p-glass.png" />
+    <Resource Include="Images\Backgrounds\Misc\frame-screenshot-tl.png" />
+    <Resource Include="Images\Backgrounds\Units\bg-archon-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-baneling-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-banshee-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-battlecruiser-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-brood-lord-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-carrier-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-colossus-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-corruptor-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-dark-templar-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-drone-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-ghost-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-hellion-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-high-templar-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-hydralisk-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-immortal-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-infestor-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-larva-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-marauder-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-marine-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-medivac-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-mothership-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-mutalisk-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-nydus-worm-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-observer-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-overlord-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-overseer-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-phoenix-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-probe-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-queen-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-raven-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-reaper-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-roach-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-scv-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-sentry-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-siege-tank-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-stalker-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-thor-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-ultralisk-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-unit-home-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-viking-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-void-ray-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-warp-prism-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-zealot-top.jpg" />
+    <Resource Include="Images\Backgrounds\Units\bg-zergling-top.jpg" />
+    <Resource Include="Images\Backgrounds\frame-screenshot-p-glass.png" />
+    <Resource Include="Images\Backgrounds\frame-screenshot-tl.png" />
+    <Content Include="Images\Backgrounds\bg_translucent_darker.png" />
+    <Content Include="Images\Icons\ProtossIcon.png" />
+    <Resource Include="Images\Icons\Terran.png" />
+    <Content Include="Images\Icons\TerranIcon.png" />
+    <Resource Include="Images\Icons\Zerg.png" />
+    <Content Include="Images\Icons\ZergIcon.png" />
+    <Resource Include="Images\Icons\zoom.png" />
+    <Content Include="Images\Portraits\0-0.jpg" />
+    <Content Include="Images\Portraits\0-1.jpg" />
+    <Content Include="Images\Portraits\0-10.jpg" />
+    <Content Include="Images\Portraits\0-11.jpg" />
+    <Content Include="Images\Portraits\0-12.jpg" />
+    <Content Include="Images\Portraits\0-13.jpg" />
+    <Content Include="Images\Portraits\0-14.jpg" />
+    <Content Include="Images\Portraits\0-16.jpg" />
+    <Content Include="Images\Portraits\0-17.jpg" />
+    <Content Include="Images\Portraits\0-18.jpg" />
+    <Content Include="Images\Portraits\0-19.jpg" />
+    <Content Include="Images\Portraits\0-2.jpg" />
+    <Content Include="Images\Portraits\0-20.jpg" />
+    <Content Include="Images\Portraits\0-21.jpg" />
+    <Content Include="Images\Portraits\0-24.jpg" />
+    <Content Include="Images\Portraits\0-25.jpg" />
+    <Content Include="Images\Portraits\0-26.jpg" />
+    <Content Include="Images\Portraits\0-27.jpg" />
+    <Content Include="Images\Portraits\0-28.jpg" />
+    <Content Include="Images\Portraits\0-29.jpg" />
+    <Content Include="Images\Portraits\0-3.jpg" />
+    <Content Include="Images\Portraits\0-34.jpg" />
+    <Content Include="Images\Portraits\0-35.jpg" />
+    <Content Include="Images\Portraits\0-4.jpg" />
+    <Content Include="Images\Portraits\0-5.jpg" />
+    <Content Include="Images\Portraits\0-6.jpg" />
+    <Content Include="Images\Portraits\0-7.jpg" />
+    <Content Include="Images\Portraits\0-8.jpg" />
+    <Content Include="Images\Portraits\0-9.jpg" />
+    <Content Include="Images\Portraits\1-0.jpg" />
+    <Content Include="Images\Portraits\1-1.jpg" />
+    <Content Include="Images\Portraits\1-12.jpg" />
+    <Content Include="Images\Portraits\1-13.jpg" />
+    <Content Include="Images\Portraits\1-14.jpg" />
+    <Content Include="Images\Portraits\1-15.jpg" />
+    <Content Include="Images\Portraits\1-16.jpg" />
+    <Content Include="Images\Portraits\1-17.jpg" />
+    <Content Include="Images\Portraits\1-24.jpg" />
+    <Content Include="Images\Portraits\1-25.jpg" />
+    <Content Include="Images\Portraits\1-26.jpg" />
+    <Content Include="Images\Portraits\1-29.jpg" />
+    <Content Include="Images\Portraits\1-30.jpg" />
+    <Content Include="Images\Portraits\1-31.jpg" />
+    <Content Include="Images\Portraits\1-4.jpg" />
+    <Content Include="Images\Portraits\1-5.jpg" />
+    <Content Include="Images\Portraits\1-6.jpg" />
+    <Content Include="Images\Portraits\1-7.jpg" />
+    <Content Include="Images\Portraits\1-8.jpg" />
+    <Content Include="Images\Portraits\1-9.jpg" />
+    <Content Include="Images\Portraits\3-0.jpg" />
+    <Content Include="Images\Portraits\3-1.jpg" />
+    <Content Include="Images\Portraits\3-10.jpg" />
+    <Content Include="Images\Portraits\3-13.jpg" />
+    <Content Include="Images\Portraits\3-14.jpg" />
+    <Content Include="Images\Portraits\3-15.jpg" />
+    <Content Include="Images\Portraits\3-16.jpg" />
+    <Content Include="Images\Portraits\3-17.jpg" />
+    <Content Include="Images\Portraits\3-18.jpg" />
+    <Content Include="Images\Portraits\3-2.jpg" />
+    <Content Include="Images\Portraits\3-24.jpg" />
+    <Content Include="Images\Portraits\3-25.jpg" />
+    <Content Include="Images\Portraits\3-26.jpg" />
+    <Content Include="Images\Portraits\3-27.jpg" />
+    <Content Include="Images\Portraits\3-28.jpg" />
+    <Content Include="Images\Portraits\3-29.jpg" />
+    <Content Include="Images\Portraits\3-3.jpg" />
+    <Content Include="Images\Portraits\3-30.jpg" />
+    <Content Include="Images\Portraits\3-31.jpg" />
+    <Content Include="Images\Portraits\3-32.jpg" />
+    <Content Include="Images\Portraits\3-33.jpg" />
+    <Content Include="Images\Portraits\3-34.jpg" />
+    <Content Include="Images\Portraits\3-35.jpg" />
+    <Content Include="Images\Portraits\3-5.jpg" />
+    <Content Include="Images\Portraits\3-6.jpg" />
+    <Content Include="Images\Portraits\3-7.jpg" />
+    <Content Include="Images\Portraits\3-8.jpg" />
+    <Content Include="Images\Portraits\3-9.jpg" />
+    <Resource Include="Images\Icons\icon-buildtime-protoss.png" />
+    <Resource Include="Images\Icons\icon-buildtime-terran.png" />
+    <Resource Include="Images\Icons\icon-mineral.png" />
+    <Resource Include="Images\Icons\icon-supply-terran.png" />
+    <Resource Include="Images\Icons\icon-vespene-terran.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-blackhole-color.png" />
+    <Resource Include="Images\Protoss\Ability\blink.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-charge-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-cliffwalk-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-cloakfield-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-feedback-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-forcefield-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-gather.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-gravitonbeam-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-hallucination-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-hardenedshields-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-permanentlycloaked-darktemplar-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-permanentlycloaked-observer-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-prismaticbeam-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-psistorm-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-shieldbattery-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-ability-protoss-wormholetransit-color.png" />
+    <Resource Include="Images\Protoss\Ability\btn-status-detector.png" />
+    <Resource Include="Images\Protoss\Structures\assimilator.jpg" />
+    <None Include="Images\Protoss\Structures\buttons\assimilator.png" />
+    <None Include="Images\Protoss\Structures\buttons\cybernetics_core.png" />
+    <None Include="Images\Protoss\Structures\buttons\dark_shrine.png" />
+    <None Include="Images\Protoss\Structures\buttons\fleet_beacon.png" />
+    <None Include="Images\Protoss\Structures\buttons\forge.png" />
+    <None Include="Images\Protoss\Structures\buttons\gateway.png" />
+    <None Include="Images\Protoss\Structures\buttons\nexus.png" />
+    <None Include="Images\Protoss\Structures\buttons\photon_cannon.png" />
+    <None Include="Images\Protoss\Structures\buttons\pylon.png" />
+    <None Include="Images\Protoss\Structures\buttons\robotics_bay.png" />
+    <None Include="Images\Protoss\Structures\buttons\robotics_facility.png" />
+    <None Include="Images\Protoss\Structures\buttons\stargate.png" />
+    <None Include="Images\Protoss\Structures\buttons\templar_archives.png" />
+    <None Include="Images\Protoss\Structures\buttons\twilight_council.png" />
+    <None Include="Images\Protoss\Structures\buttons\warpgate.png" />
+    <None Include="Images\Protoss\Structures\buttons\warp_prism.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\archon.png" />
+    <Resource Include="Images\Protoss\Units\archon.png" />
+    <Resource Include="Images\Protoss\Units\colossus.png" />
+    <Resource Include="Images\Protoss\Units\high_templar.png" />
+    <Resource Include="Images\Protoss\Units\immortal.png" />
+    <Resource Include="Images\Protoss\Units\phoenix.png" />
+    <Resource Include="Images\Protoss\Units\probe.png" />
+    <Resource Include="Images\Protoss\Units\stalker.png" />
+    <Resource Include="Images\Protoss\Units\warpprism.png" />
+    <Resource Include="Images\Protoss\Units\warpprismstationary.png" />
+    <Resource Include="Images\Protoss\Units\void_ray.png" />
+    <Resource Include="Images\Protoss\Units\zealot.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\carrier.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\colossus.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\dark_templar.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\high_templar.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\immortal.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\interceptors.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\mothership.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\observer.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\phoenix.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\probe.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\sentry.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\stalker.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\void_ray.png" />
+    <None Include="Images\Protoss\Units\Unofficial\buttons\zealot.png" />
+    <Resource Include="Images\Protoss\Units\carrier.png" />
+    <Resource Include="Images\Protoss\Units\dark_templar.png" />
+    <Resource Include="Images\Protoss\Units\interceptor.png" />
+    <Resource Include="Images\Protoss\Units\mothership.png" />
+    <Resource Include="Images\Protoss\Units\observer.png" />
+    <Resource Include="Images\Protoss\Units\sentry.png" />
+    <Resource Include="Images\Protoss\Units\Unofficial\archon.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\carrier.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\colossus.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\dark_templar.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\high_templar.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\immortal.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\mothership.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\phoenix.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\probe.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\reaver.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\sentry.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\stalker.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\void_ray.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\warp_prism.jpg" />
+    <Resource Include="Images\Protoss\Units\Unofficial\zealot.jpg" />
+    <Resource Include="Images\Protoss\Structures\cybernetics_core.jpg" />
+    <Resource Include="Images\Protoss\Structures\dark_shrine.jpg" />
+    <Resource Include="Images\Protoss\Structures\fleet_beacon.jpg" />
+    <Resource Include="Images\Protoss\Structures\forge.jpg" />
+    <Resource Include="Images\Protoss\Structures\gateway.jpg" />
+    <Resource Include="Images\Protoss\Structures\nexus.jpg" />
+    <Resource Include="Images\Protoss\Structures\photon_cannon.jpg" />
+    <Resource Include="Images\Protoss\Structures\pylon.jpg" />
+    <Resource Include="Images\Protoss\Structures\robotics_facility.jpg" />
+    <Resource Include="Images\Protoss\Structures\stargate.jpg" />
+    <Resource Include="Images\Protoss\Structures\templar_archives.jpg" />
+    <Resource Include="Images\Protoss\Structures\twilight_council.jpg" />
+    <Resource Include="Images\Protoss\Structures\warpgate.jpg" />
+    <Resource Include="Images\Protoss\Upgrades\airarmorlevel1.png" />
+    <Resource Include="Images\Protoss\Upgrades\airarmorlevel2.png" />
+    <Resource Include="Images\Protoss\Upgrades\airarmorlevel3.png" />
+    <Resource Include="Images\Protoss\Upgrades\airweaponslevel0.png" />
+    <Resource Include="Images\Protoss\Upgrades\airweaponslevel1.png" />
+    <Resource Include="Images\Protoss\Upgrades\airweaponslevel2.png" />
+    <Resource Include="Images\Protoss\Upgrades\airweaponslevel3.png" />
+    <Resource Include="Images\Protoss\Upgrades\extendedthermallance.png" />
+    <Resource Include="Images\Protoss\Upgrades\graviticbooster.png" />
+    <Resource Include="Images\Protoss\Upgrades\graviticdrive.png" />
+    <Resource Include="Images\Protoss\Upgrades\gravitoncatapult.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundarmorlevel1.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundarmorlevel2.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundarmorlevel3.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundweaponslevel0.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundweaponslevel1.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundweaponslevel2.png" />
+    <Resource Include="Images\Protoss\Upgrades\groundweaponslevel3.png" />
+    <Resource Include="Images\Protoss\Upgrades\shieldslevel1.png" />
+    <Resource Include="Images\Protoss\Upgrades\shieldslevel2.png" />
+    <Resource Include="Images\Protoss\Upgrades\shieldslevel3.png" />
+    <Resource Include="Images\Protoss\Ability\chrono_boost.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-bombardmentstrike-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-cloak-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-emp-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-gather.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-heal-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-holdfire.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-huntermissile-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-jetpack-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-nuclearstrike-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-punishergrenade-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-repair.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-snipe-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-stimpack-color.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-weaponsfree.png" />
+    <Content Include="Images\Terran\Ability\btn-ability-terran-yamatogun-color.png" />
+    <Content Include="Images\Terran\Ability\btn-status-detector.png" />
+    <Resource Include="Images\Terran\Structures\armory.jpg" />
+    <Resource Include="Images\Terran\Structures\auto_turret.jpg" />
+    <Resource Include="Images\Terran\Structures\barracks.jpg" />
+    <Resource Include="Images\Terran\Structures\bunker.jpg" />
+    <Content Include="Images\Terran\Structures\buttons\armory.png" />
+    <Content Include="Images\Terran\Structures\buttons\barracks.png" />
+    <Content Include="Images\Terran\Structures\buttons\btn-building-terran-autoturret.png" />
+    <Content Include="Images\Terran\Structures\buttons\bunker.png" />
+    <Content Include="Images\Terran\Structures\buttons\command_center.png" />
+    <Content Include="Images\Terran\Structures\buttons\engineering_bay.png" />
+    <Content Include="Images\Terran\Structures\buttons\factory.png" />
+    <Content Include="Images\Terran\Structures\buttons\fusion_core.png" />
+    <Content Include="Images\Terran\Structures\buttons\ghost_academy.png" />
+    <Content Include="Images\Terran\Structures\buttons\missile_turret.png" />
+    <Content Include="Images\Terran\Structures\buttons\orbital_command.png" />
+    <Content Include="Images\Terran\Structures\buttons\planetary_fortress.png" />
+    <Content Include="Images\Terran\Structures\buttons\reactor.png" />
+    <Content Include="Images\Terran\Structures\buttons\refinery.png" />
+    <Content Include="Images\Terran\Structures\buttons\sensor_tower.png" />
+    <Content Include="Images\Terran\Structures\buttons\starport.png" />
+    <Content Include="Images\Terran\Structures\buttons\supply_depot.png" />
+    <Content Include="Images\Terran\Structures\buttons\tech_lab.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\auto_turret.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\banshee.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\battlecruiser.png" />
+    <Resource Include="Images\Terran\Units\siegetank.png" />
+    <Resource Include="Images\Terran\Units\siegetanksiegemode.png" />
+    <Resource Include="Images\Terran\Units\targetingdrone.png" />
+    <Resource Include="Images\Terran\Units\vikingassault.png" />
+    <Resource Include="Images\Terran\Units\viking.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\ghost.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\hellion.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\marauder.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\marine.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\medivac.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\mule.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\point_defense_drone.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\raven.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\reaper.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\scv.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\siege_tank.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\thor.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\buttons\viking.png" />
+    <Resource Include="Images\Terran\Units\ghost.png" />
+    <Resource Include="Images\Terran\Units\hellion.png" />
+    <Resource Include="Images\Terran\Units\marauder.png" />
+    <Resource Include="Images\Terran\Units\marine.png" />
+    <Resource Include="Images\Terran\Units\medivac.png" />
+    <Resource Include="Images\Terran\Units\mule.png" />
+    <Resource Include="Images\Terran\Units\raven.png" />
+    <Resource Include="Images\Terran\Units\reaper.png" />
+    <Resource Include="Images\Terran\Units\scv.png" />
+    <Resource Include="Images\Terran\Units\thor.png" />
+    <Resource Include="Images\Terran\Units\battlecruiser.png" />
+    <Resource Include="Images\Terran\Units\banshee.png" />
+    <Resource Include="Images\Terran\Units\Unofficial\banshee.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\battlecruiser.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\ghost.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\hellion.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\marauder.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\marine.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\medivac.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\mule.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\raven.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\reaper.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\scv.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\siege_tank.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\thor.jpg" />
+    <Resource Include="Images\Terran\Units\Unofficial\viking.jpg" />
+    <Resource Include="Images\Terran\Structures\command_center.jpg" />
+    <Resource Include="Images\Terran\Structures\engineering_bay.jpg" />
+    <Resource Include="Images\Terran\Structures\factory.jpg" />
+    <Resource Include="Images\Terran\Structures\fusion_core.jpg" />
+    <Resource Include="Images\Terran\Structures\ghost_academy.jpg" />
+    <Resource Include="Images\Terran\Structures\missile_turret.jpg" />
+    <Resource Include="Images\Terran\Structures\orbital_command.jpg" />
+    <Resource Include="Images\Terran\Structures\planetary_fortress.jpg" />
+    <Resource Include="Images\Terran\Structures\reactor.jpg" />
+    <Resource Include="Images\Terran\Structures\refinery.jpg" />
+    <Resource Include="Images\Terran\Structures\sensor_tower.jpg" />
+    <Resource Include="Images\Terran\Structures\starport.jpg" />
+    <Resource Include="Images\Terran\Structures\supply_depot.jpg" />
+    <Resource Include="Images\Terran\Structures\tech_lab.jpg" />
+    <Resource Include="Images\Terran\Upgrades\combatshield-color.png" />
+    <Resource Include="Images\Terran\Upgrades\behemothreactor.png" />
+    <Resource Include="Images\Terran\Upgrades\caduceusreactor.png" />
+    <Resource Include="Images\Terran\Upgrades\corvidreactor.png" />
+    <Resource Include="Images\Terran\Upgrades\durablematerials.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryarmorlevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryarmorlevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryarmorlevel3.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryweaponslevel0.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryweaponslevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryweaponslevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\infantryweaponslevel3.png" />
+    <Resource Include="Images\Terran\Upgrades\infernalpreigniter.png" />
+    <Resource Include="Images\Terran\Upgrades\moebiusreactor.png" />
+    <Resource Include="Images\Terran\Upgrades\reapernitropacks.png" />
+    <Resource Include="Images\Terran\Upgrades\shipplatinglevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\shipplatinglevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\shipplatinglevel3.png" />
+    <Resource Include="Images\Terran\Upgrades\shipweaponslevel0.png" />
+    <Resource Include="Images\Terran\Upgrades\shipweaponslevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\shipweaponslevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\shipweaponslevel3.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleplatinglevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleplatinglevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleplatinglevel3.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleweaponslevel0.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleweaponslevel1.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleweaponslevel2.png" />
+    <Resource Include="Images\Terran\Upgrades\vehicleweaponslevel3.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-attackstructure-color.png" />
+    <Resource Include="Images\Zerg\Ability\burrow.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-contaminate-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-corruption-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-explode-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-frenzied-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-fungalgrowth-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-gather.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-generatecreep-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-neuralparasite-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-rapidregeneration-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-swarmseeds-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-ability-zerg-transfusion-color.png" />
+    <Resource Include="Images\Zerg\Ability\btn-status-detector.png" />
+    <Resource Include="Images\Zerg\Structures\baneling_nest.jpg" />
+    <Content Include="Images\Zerg\Structures\buttons\baneling_nest.png" />
+    <Content Include="Images\Zerg\Structures\buttons\creep_tumor.png" />
+    <Content Include="Images\Zerg\Structures\buttons\evolution_chamber.png" />
+    <Content Include="Images\Zerg\Structures\buttons\extractor.png" />
+    <Content Include="Images\Zerg\Structures\buttons\greater_spire.png" />
+    <Content Include="Images\Zerg\Structures\buttons\hatchery.png" />
+    <Content Include="Images\Zerg\Structures\buttons\hive.png" />
+    <Content Include="Images\Zerg\Structures\buttons\hydralisk_den.png" />
+    <Content Include="Images\Zerg\Structures\buttons\infestation_pit.png" />
+    <Content Include="Images\Zerg\Structures\buttons\lair.png" />
+    <Content Include="Images\Zerg\Structures\buttons\nydus_network.png" />
+    <Content Include="Images\Zerg\Structures\buttons\nydus_worm.png" />
+    <Content Include="Images\Zerg\Structures\buttons\roach_warren.png" />
+    <Content Include="Images\Zerg\Structures\buttons\spawning_pool.png" />
+    <Content Include="Images\Zerg\Structures\buttons\spine_crawler.png" />
+    <Content Include="Images\Zerg\Structures\buttons\spire.png" />
+    <Content Include="Images\Zerg\Structures\buttons\spore_crawler.png" />
+    <Content Include="Images\Zerg\Structures\buttons\ultralisk_cavern.png" />
+    <Content Include="Images\unit-thumbs-54x49-table.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\baneling.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\broodling.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\brood_lord.png" />
+    <Resource Include="Images\Zerg\Units\broodlord.png" />
+    <Resource Include="Images\Zerg\Units\changeling.png" />
+    <Resource Include="Images\Zerg\Units\infestedmarine.png" />
+    <Resource Include="Images\Zerg\Units\larva.png" />
+    <Resource Include="Images\Zerg\Units\overseer.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\changeling.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\corruptor.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\drone.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\hydralisk.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\infested_terran.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\infestor.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\larva.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\mutalisk.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\overlord.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\overseer.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\queen.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\roach.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\ultralisk.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\buttons\zergling.png" />
+    <Resource Include="Images\Zerg\Units\baneling.png" />
+    <Resource Include="Images\Zerg\Units\corruptor.png" />
+    <Resource Include="Images\Zerg\Units\drone.png" />
+    <Resource Include="Images\Zerg\Units\hydralisk.png" />
+    <Resource Include="Images\Zerg\Units\infestor.png" />
+    <Resource Include="Images\Zerg\Units\mutalisk.png" />
+    <Resource Include="Images\Zerg\Units\overlord.png" />
+    <Resource Include="Images\Zerg\Units\queen.png" />
+    <Resource Include="Images\Zerg\Units\roach.png" />
+    <Resource Include="Images\Zerg\Units\ultralisk.png" />
+    <Resource Include="Images\Zerg\Units\zergling.png" />
+    <Resource Include="Images\Zerg\Units\Unofficial\baneling.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\brood_lord.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\corruptor.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\drone.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\hydralisk.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\infested_terran.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\infestor.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\larva.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\lurker.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\mutalisk.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\overlord.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\overseer.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\queen.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\roach.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\ultralisk.jpg" />
+    <Resource Include="Images\Zerg\Units\Unofficial\zergling.jpg" />
+    <Resource Include="Images\Zerg\Structures\evolution_chamber.jpg" />
+    <Resource Include="Images\Zerg\Structures\extractor.jpg" />
+    <Resource Include="Images\Zerg\Structures\greater_spire.jpg" />
+    <Resource Include="Images\Zerg\Structures\hatchery.jpg" />
+    <Resource Include="Images\Zerg\Structures\hive.jpg" />
+    <Resource Include="Images\Zerg\Structures\hydralisk_den.jpg" />
+    <Resource Include="Images\Zerg\Structures\infestation_pit.jpg" />
+    <Resource Include="Images\Zerg\Structures\lair.jpg" />
+    <Resource Include="Images\Zerg\Structures\nydus_network.jpg" />
+    <Resource Include="Images\Zerg\Structures\nydus_worm.jpg" />
+    <Resource Include="Images\Zerg\Structures\roach_warren.jpg" />
+    <Resource Include="Images\Zerg\Structures\spawning_pool.jpg" />
+    <Resource Include="Images\Zerg\Structures\spine_crawler.jpg" />
+    <Resource Include="Images\Zerg\Structures\spire.jpg" />
+    <Resource Include="Images\Zerg\Structures\spore_crawler.jpg" />
+    <Resource Include="Images\Zerg\Structures\ultralisk_cavern.jpg" />
+    <Resource Include="Images\Zerg\Upgrades\adrenalglands.png" />
+    <Resource Include="Images\Zerg\Upgrades\airattacks-level0.png" />
+    <Resource Include="Images\Zerg\Upgrades\airattacks-level1.png" />
+    <Resource Include="Images\Zerg\Upgrades\airattacks-level2.png" />
+    <Resource Include="Images\Zerg\Upgrades\airattacks-level3.png" />
+    <Resource Include="Images\Zerg\Upgrades\centrifugalhooks.png" />
+    <Resource Include="Images\Zerg\Upgrades\chitinousplating.png" />
+    <Resource Include="Images\Zerg\Upgrades\flyercarapace-level1.png" />
+    <Resource Include="Images\Zerg\Upgrades\flyercarapace-level2.png" />
+    <Resource Include="Images\Zerg\Upgrades\flyercarapace-level3.png" />
+    <Resource Include="Images\Zerg\Upgrades\glialreconstitution.png" />
+    <Resource Include="Images\Zerg\Upgrades\groovedspines.png" />
+    <Resource Include="Images\Zerg\Upgrades\groundcarapace-level1.png" />
+    <Resource Include="Images\Zerg\Upgrades\groundcarapace-level2.png" />
+    <Resource Include="Images\Zerg\Upgrades\groundcarapace-level3.png" />
+    <Resource Include="Images\Zerg\Upgrades\meleeattacks-level0.png" />
+    <Resource Include="Images\Zerg\Upgrades\meleeattacks-level1.png" />
+    <Resource Include="Images\Zerg\Upgrades\meleeattacks-level2.png" />
+    <Resource Include="Images\Zerg\Upgrades\meleeattacks-level3.png" />
+    <Resource Include="Images\Zerg\Upgrades\metabolicboost.png" />
+    <Resource Include="Images\Zerg\Upgrades\missileattacks-level0.png" />
+    <Resource Include="Images\Zerg\Upgrades\missileattacks-level1.png" />
+    <Resource Include="Images\Zerg\Upgrades\missileattacks-level2.png" />
+    <Resource Include="Images\Zerg\Upgrades\missileattacks-level3.png" />
+    <Resource Include="Images\Zerg\Upgrades\pathogenglands.png" />
+    <Resource Include="Images\Zerg\Upgrades\pneumatizedcarapace.png" />
+    <Resource Include="Images\Zerg\Upgrades\tunnelingclaws.png" />
+    <Resource Include="Images\Zerg\Upgrades\ventralsacs.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppHub\Screenshots\" />
+    <Folder Include="Statistics\Protoss\Structures\" />
+    <Folder Include="Statistics\Protoss\Units\" />
+    <Folder Include="Statistics\Protoss\Upgrades\" />
+    <Folder Include="Statistics\Terran\Structures\" />
+    <Folder Include="Statistics\Terran\Units\" />
+    <Folder Include="Statistics\Terran\Upgrades\" />
+    <Folder Include="Statistics\Zerg\Structures\" />
+    <Folder Include="Statistics\Zerg\Units\" />
+    <Folder Include="Statistics\Zerg\Upgrades\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

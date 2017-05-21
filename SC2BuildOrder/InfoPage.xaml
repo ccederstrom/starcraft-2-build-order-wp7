@@ -1,0 +1,110 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="SC2BuildOrder.InfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    xmlns:my="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="SC2 BUILD ORDER">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="about">
+                <Grid>
+                    <Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <TextBlock Height="Auto" Width="Auto" Text="Application Title" VerticalAlignment="Top"  HorizontalAlignment="Stretch" FontSize="26" Name="txtAppName" />
+                            <TextBlock Height="Auto" HorizontalAlignment="Stretch" Name="txtVersion" Text="Version" Foreground="{StaticResource PhoneAccentBrush}" VerticalAlignment="Top" FontSize="22.667" />
+                            <TextBlock Height="Auto" Width="Auto" Text="Description" VerticalAlignment="Top"  HorizontalAlignment="Stretch"  Name="txtDescription"  Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" FontSize="22.667" Margin="0,10,0,0" />
+                            <TextBlock Height="Auto" FontSize="26" HorizontalAlignment="Stretch" Name="txtSupport" Text="For feedback and support contact:" VerticalAlignment="Top" Margin="0,10,0,0" />
+                            <HyperlinkButton Content="pngc.wp7@hotmail.com" Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="btnContact" VerticalAlignment="Top" Width="Auto" HorizontalContentAlignment="Left" Foreground="{StaticResource PhoneAccentBrush}" Click="btnContact_Click" />
+                            <TextBlock  Height="Auto"  FontSize="26" HorizontalAlignment="Stretch" Margin="0,10,0,0" Name="textBlock1" Text="Review App:" VerticalAlignment="Top" />
+                            <HyperlinkButton Content="Rate and review" Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="btnReview" VerticalAlignment="Top" Width="Auto" HorizontalContentAlignment="Left" Foreground="{StaticResource PhoneAccentBrush}" Click="btnReview_Click" />
+                            <TextBlock Height="Auto" FontSize="26" HorizontalAlignment="Stretch" Margin="0,10,0,0" Name="textBlock2" Text="Other apps:" VerticalAlignment="Top" />
+                            <HyperlinkButton Content="Marketplace" Height="Auto" HorizontalAlignment="Stretch" Margin="0" Name="btnMarketplace" VerticalAlignment="Top" Width="Auto" HorizontalContentAlignment="Left" Foreground="{StaticResource PhoneAccentBrush}" Click="btnMarketplace_Click" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item HELP-->
+            <controls:PivotItem Header="help">
+                <Grid>
+                    <ScrollViewer  Height="520" VerticalAlignment="Top">
+                        <StackPanel >
+                            <TextBlock Height="Auto" Name="txtHelp" Text="Check " FontSize="22.667" Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" />
+
+                            <TextBlock Height="Auto" Text="Directions:"  FontSize="26" TextWrapping="Wrap" Margin="0,10,0,0" />
+                            <TextBlock Height="Auto" Name="txtDirections" Text="Select a feature from the main menu then select a race to see its build order strategy or unit strengths and weaknesses." FontSize="22.667" Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" />
+
+                            <TextBlock Height="Auto" Text="Legal Disclaimer:"  FontSize="26" TextWrapping="Wrap" Margin="0,10,0,0" />
+                            <TextBlock Height="Auto" Text="This application is not endorsed, affiliated or licensed by Blizzard Entertainment, and all related names, descriptions of characters, and images are trademarked and copyrighted material owned by Blizzard Entertainment and its subsidiaries. All trademarked materials are believed to be used in a nominative manner. All copyrighted materials are believed to be fair use under 17 U.S.C. §107 No claim is made toward the intelletual property belonging to anyone other than the developer." FontSize="22.667" Foreground="{StaticResource PhoneAccentBrush}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+            <!--Pivot item HISTORY-->
+            <controls:PivotItem Header="history">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel>
+                           <TextBlock Height="Auto" Text="Version 1.0" FontSize="26" />
+                            <TextBlock Height="Auto" Text="Inital release"  FontSize="22.667" Foreground="{StaticResource PhoneAccentBrush}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <my:AdControl AdUnitId="10024693" ApplicationId="27b08138-926e-4d7a-bfb1-8523c2c9b0e2" Height="80" HorizontalAlignment="Center" Margin="0" Name="adControl1" VerticalAlignment="Bottom" Width="480" VerticalContentAlignment="Center" />
+
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
