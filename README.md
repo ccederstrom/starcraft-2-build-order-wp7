@@ -1,5 +1,5 @@
 # StarCraft 2 Build Order for Windows Phone 7
-Starcraft 2 Build Order can help improve your skills and can plan your game strategy.
+Starcraft 2 Build Order for Windows Phone 7 can help improve your skills and plan your game strategy.
 
 **Microsoft store:** https://www.microsoft.com/en-us/store/p/sc2-build-order/9nblggh09ktj?rtc=1#
 
